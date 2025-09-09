@@ -2,9 +2,10 @@
 
 URL="https://datos.comunidad.madrid/dataset/3dacd589-ecca-485c-81b9-a61606b7199f/resource/ee75d31c-8042-4067-bbd7-739bb3eb8059/download"
 fecha=$(date +%Y-%m-%d)
-ARCHIVO_DEST="aire_${fecha}.csv"
 LOGDIR="$(pwd)/informes"
 LOGFILE="${LOGDIR}/informe-${fecha}.log"
+REGDIR="$(pwd)/registros"
+ARCHIVO_DEST="${REGDIR}/aire_${fecha}.csv"
 
 # Descargar archivo y guardar salida y errores en el log
 wget -O "$ARCHIVO_DEST" "$URL" >> "$LOGFILE" 2>&1
